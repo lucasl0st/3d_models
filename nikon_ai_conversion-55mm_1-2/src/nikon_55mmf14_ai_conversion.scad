@@ -3,27 +3,59 @@ $fs = 0.25;
 
 // main cylinder
 difference() {
-    cylinder(r = 32, h = 13);
+    group() {
+        cylinder(r = 32, h = 13);
+
+        // grip
+        // rotating to align with prong holes
+        rotate([0, 0, -2]) {
+            translate([0, 0, 5]) {
+                difference() {
+                    grip_amount=26;
+                    grip_r=40;
+                    grip_h=5;
+
+                    cylinder(r = 33, h = grip_h);
+                    cylinder(r = 32, h = grip_h);
+
+                    // remove grip above prong holes
+                    translate([-14, 28, 0]) {
+                        cube(size = [28, 6, 5]);
+                    }
+
+                    for (i = [0: grip_amount]) {
+                        rotate([0, 0, (720/grip_amount)*i]) {
+                            translate([0, grip_r+32, 0]) {
+                                cylinder(r = grip_r, h = grip_h);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // inner hole
     cylinder(r = 29.75, h = 13);
 
     // aperture bind screw
     rotate([90, 0, -35]) {
         translate([0, 2.5, 28]) {
-            cylinder(r = 0.8, h = 5);
+            cylinder(r = 0.8, h = 10);
         }
     }
 
     // prongs 1
     rotate([90, 0, 170]) {
         translate([0, 7, 28]) {
-            cylinder(r = 0.8, h = 5);
+            cylinder(r = 0.8, h = 10);
         }
     }
 
     // prongs 2
     rotate([90, 0, 186]) {
         translate([0, 7, 28]) {
-            cylinder(r = 0.8, h = 5);
+            cylinder(r = 0.8, h = 10);
         }
     }
 
