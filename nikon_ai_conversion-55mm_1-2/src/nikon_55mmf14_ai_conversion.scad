@@ -30,6 +30,16 @@ difference() {
                             }
                         }
                     }
+
+                    // rills
+                    rill_amount=360*3;
+                    for (i = [0: rill_amount]) {
+                        rotate([0, 0, i/(rill_amount/360)]) {
+                            translate([0, 32.9, 0]) {
+                                cube(size = [0.1, 5, 5]);
+                            }
+                        }
+                    }
                 }
             }
         }
