@@ -3,6 +3,11 @@
 This part is meant as a replacement for the Nikon AI conversion kit part B number 9.
 However, this design (mainly the grip) is much closer to the original non-AI aperture ring.
 
+**WARNING!**
+> All 55mm lenses are fully incompatible with at least the Nikon F4 and FA! This AI conversion does not change this fact! The 55mm lenses hit the maximum aperture lever that the Nikon F4 and FA use. You **will** damage your camera. Ask me how I know.
+This incompatibility is documented within Nikon's camera manuals.
+For later camera models (for example the Nikon F5) this AI conversion works fine because these cameras do not have the maximum aperture lever.
+
 This part is specifically for the `Auto` version of this lens. I do not own a non-auto lens,
 I therefore cannot determine if this part works on it or not.
 It seems to use a different part number, so it is likely incompatible.
